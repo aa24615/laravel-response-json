@@ -29,7 +29,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 //使用命名空间
-use Zyan\JsonResponse;
+use Zyan\JsonResponse\JsonResponse;
 
 class Controller extends BaseController
 {

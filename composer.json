@@ -40,7 +40,7 @@
                 "composer fix"
             ],
             "pre-push": [
-                "composer test"
+                "composer tests"
             ]
         }
     },
