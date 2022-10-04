@@ -95,12 +95,10 @@ public function error($msg = '操作失败', $data = [], $code = 0);
 }
 ```
 
-原生
 
+自定义cdoe msg data
 
 ```php
-
-//失败
 public function jsonReturn($code = 200, $msg = '操作成功', $data = ['username' => '用户名']);
 
 //return
