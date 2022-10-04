@@ -54,22 +54,64 @@ class LoginContoller extends Controller
     public function login(){
         //登录成功
         if(true){
-            return $this->success(User::get(1));
+            $user = User::get(1);
+            return $this->success($user);
         }else{ //失败
             return $this->error('密码错误');
         }
+    }
+    
+    public function getUser(){
+        $user = User::get(1);
+        return $this->jsonReturn(200,'操作成功',$user);
     }
 }
 ```
 
 ## 方法
+成功
 ```php
-//成功
 public function success($data = []);
-//失败
-public function error($msg = '操作失败', $data = [], $code = 0);
+
+//return
+{
+  "code": 1,
+  "msg": "ok",
+  "data" : []
+}
 ```
 
+失败
+```php
+
+//失败
+public function error($msg = '操作失败', $data = [], $code = 0);
+
+//return
+{
+  "code": 0,
+  "msg": "操作失败",
+  "data" : []
+}
+```
+
+原生
+
+
+```php
+
+//失败
+public function jsonReturn($code = 200, $msg = '操作成功', $data = ['username' => '用户名']);
+
+//return
+{
+  "code": 200,//自定义code
+  "msg": "操作失败",//说明
+  "data" : { //数据
+    "username":"用户名"
+  }
+}
+```
 
 ## 参与贡献
 
