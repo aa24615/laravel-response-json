@@ -20,7 +20,12 @@ trait JsonResponse
      */
     public function success($data = [])
     {
-        return $this->jsonReturn(1,'ok',$data);
+        $msg = 'ok';
+        if(is_string($data)){
+            $msg = $data;
+            $data = [];
+        }
+        return $this->jsonReturn(1,$msg,$data);
     }
 
     /**
